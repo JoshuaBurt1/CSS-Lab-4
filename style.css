@@ -1,0 +1,98 @@
+*,*:before,*:after{
+    box-sizing: inherit; /*box-model format: allows padding to alter box without having to change height and width*/
+}
+html { 
+    font-family: "Helvetica";
+    box-sizing: border-box;
+}
+
+body{ /*2) Background image to body*/
+    background-image: url(antarctica.avif);
+    background-size: cover; 
+    background-position: center;
+    max-width:100%;
+    height: auto;
+    filter:contrast(130.5%);
+}
+
+img { /*3) filter function usage: brightness, hue-rotate, saturate, contrast*/
+    max-width:90%;
+    max-height:90%; /*6) 90% of div.wrapper and centre it within the .wrapper div.*/
+    display: block; /*centers image*/
+    margin: auto; /*centers image*/
+    margin-bottom:40px;
+    filter: brightness(270%) hue-rotate(104deg) saturate(1000%) contrast(1000%); /*note: filter:opacity affects child elements (ie. img)*/
+}
+section{
+    background-color: rgba(3, 89, 182, 0.29); /*6) Add a background colour using an appropriate colour measurement.*/
+    padding: 20px;
+}
+
+img:hover{ /*4) responsive image code*/
+    transform: scaleX(-1); /*movement with CSS, no javascript*/
+}
+
+.wrapper{  
+    color: #333; 
+    width: 80vw; /*5) wrapper to 80% of the viewport width*/
+    margin: auto; /*centers wrapper to viewport inside wrapper*/
+    padding: 41px;
+    border-radius: 25px;  
+    background-color: rgba(3, 89, 182, 0.29); /*5) Add a background colour and border to div.wrapper*/
+} 
+
+.flex{ /*b) div class "flex" added */
+    background: #ccc;
+    height: 431px;
+    max-width: 100%;
+    border-style: inset;
+    padding: 33px;  
+    display: inline-block;
+    vertical-align: middle; /*aligns content to center, vertically */
+    overflow: scroll;
+}
+
+header, footer{
+    background: #777777;
+    height: 60px;
+}
+
+header{
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+footer{
+    padding: 10px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.wrapper header h1{
+    font-size: 36.9px;
+    text-align: left;
+    padding:10px;
+}  
+
+p {
+    color: #000000; /*e) all except p class are color #333 --- element selector (2)*/
+}
+
+ol {
+    list-style-position: inside; /*keeps ordered list elements in div .flex inside box*/
+}
+
+li:nth-of-type(odd) { /*c) every odd bullet point bold --- pseudo element selector (3) */
+    font-weight: bold; 
+}
+
+footer p{ /*a) four different types of selectors --- Combinators, Descendant Selector (4) */
+    color: orange;
+    font-size: 14px;
+}
+
+h2 {
+    font-size: 25px; 
+    float:left;
+    padding-left: 10px; 
+} 
